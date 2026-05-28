@@ -59,14 +59,14 @@ def main():
 
     print(f"Total Energy In:        {snap.total_in_j:,.1f} J")
     print(f"Total Energy Out:       {snap.total_out_j:,.1f} J")
-    print(f"Net Δ Stored:           {snap.delta_stored_j:,.1f} J")
+    print(f"Net Delta Stored:       {snap.delta_stored_j:,.1f} J")
     print(f"Accounted Losses:       {snap.net_loss_j:,.1f} J")
     print(f"Apparent Violation:     {snap.apparent_violation}")
 
     if snap.apparent_violation:
-        print("\n⚠️  WARNING: Energy imbalance detected. This should never happen in production.")
+        print("\nWARNING: Energy imbalance detected. This should never happen in production.")
     else:
-        print("\n✅ ENERGY BALANCE VERIFIED — 0 violations within tolerance.")
+        print("\nSUCCESS: ENERGY BALANCE VERIFIED — 0 violations within tolerance.")
 
     print("\n" + "=" * 70)
     print("This is what a real MEL system feels like to the user:")
