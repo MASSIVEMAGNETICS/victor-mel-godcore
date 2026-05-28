@@ -10,9 +10,12 @@ Currently implemented in v1.0:
 Others are stubbed with the correct interface for future hardening.
 """
 
+from .base import VictorAlgorithm, AlgorithmResult
 from .pfeho import PiezoFractalEnergyHarvestingOptimizer
 
 __all__ = [
+    "VictorAlgorithm",
+    "AlgorithmResult",
     "PiezoFractalEnergyHarvestingOptimizer",
     # Future: FMA, SFRN, VDME, etc.
 ]
