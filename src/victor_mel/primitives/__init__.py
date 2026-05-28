@@ -11,6 +11,7 @@ from .energy_auditor import (
     EnergyTransaction,
     LedgerSnapshot,
 )
+from .resonance import ResonanceEngine
 
 __all__ = [
     "EnergyAuditor",
@@ -18,4 +19,5 @@ __all__ = [
     "EnergyDomain",
     "EnergyTransaction",
     "LedgerSnapshot",
+    "ResonanceEngine",
 ]
