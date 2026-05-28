@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "victor-mel-godcore"
+version = "1.0.0"
+description = "Victor DNA + MAGNETRON ENERGY LENS (MEL) — Battle-tested, physics-honest, energy-audited cognitive + power system primitives"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Bloodline Locked - MASSIVEMAGNETICS"}
+authors = [
+  {name = "MASSIVEMAGNETICS / Brandon iambandobandz Emery", email = "victor@massivemagnetics.ai"}
+]
+keywords = ["victor", "mel", "magnetron-energy-lens", "energy-audit", "metamaterial", "flywheel", "resonant-wireless", "sovereign-ai", "safe-mutation"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov",
+    "hypothesis",
+    "black",
+    "ruff",
+    "mypy",
+]
+mel-sim = [
+    "sympy>=1.12",
+]
+full = [
+    "torch>=2.0",
+    "sympy>=1.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/MASSIVEMAGNETICS/victor-mel-godcore"
+Repository = "https://github.com/MASSIVEMAGNETICS/victor-mel-godcore"
+Documentation = "https://github.com/MASSIVEMAGNETICS/victor-mel-godcore#readme"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "mel: marks tests that exercise the MEL physics simulator",
+    "energy_audit: marks tests that must never show over-unity",
+]
