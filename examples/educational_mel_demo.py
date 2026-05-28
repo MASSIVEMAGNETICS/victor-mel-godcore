@@ -66,7 +66,7 @@ def main():
     if snap.apparent_violation:
         print("\nWARNING: Energy imbalance detected. This should never happen in production.")
     else:
-        print("\nSUCCESS: ENERGY BALANCE VERIFIED — 0 violations within tolerance.")
+        print("\nSUCCESS: ENERGY BALANCE VERIFIED - 0 violations within tolerance.")
 
     print("\n" + "=" * 70)
     print("This is what a real MEL system feels like to the user:")
