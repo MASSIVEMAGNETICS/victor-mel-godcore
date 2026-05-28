@@ -12,7 +12,9 @@ Run with:
 from victor_mel.mel.mel_controller import MELController
 from victor_mel.primitives.energy_auditor import EnergyAuditor
 from victor_mel.primitives.resonance import ResonanceEngine
+from victor_mel.algorithms.pfeho import PiezoFractalEnergyHarvestingOptimizer
 import time
+import random
 
 
 def main():
@@ -34,6 +36,20 @@ def main():
     time.sleep(0.6)
 
     print(">> Engaging resonant wireless field lens (metamaterial enhanced)...\n")
+
+    # Optional: Activate PFEHO harvesting skin (makes the system feel even more self-sustaining)
+    pfeho = PiezoFractalEnergyHarvestingOptimizer(auditor=auditor)
+    print(">> Activating PFEHO piezo-fractal harvesting layer...")
+
+    # Simulate some vibration from the "machine"
+    vibration = [random.uniform(0.3, 1.8) for _ in range(12)]
+    harvest_snapshot = pfeho.step(
+        raw_vibration=vibration,
+        current_load_w=145,
+        flywheel_soc=mel.flywheel.stored_energy_j / 250000,
+        ultracap_soc=0.65,
+    )
+    print(f"   → Predicted harvest: {harvest_snapshot.predicted_harvest_w:.2f} W | Net eff: {harvest_snapshot.net_efficiency:.1%}")
 
     # The "magic" part the user experiences
     result = mel.maintain_power(load_w=145, duration_s=45)
