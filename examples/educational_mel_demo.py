@@ -28,12 +28,12 @@ def main():
     mel = MELController(auditor=auditor, resonance=resonance)
 
     # Pre-spin the flywheel to a nice operating point (feels "alive")
-    print("→ Spinning up maglev flywheel to elegant operating speed...")
+    print(">> Spinning up maglev flywheel to elegant operating speed...")
     mel.flywheel.charge(380, 18.0)  # ~6.8 kJ stored
 
     time.sleep(0.6)
 
-    print("→ Engaging resonant wireless field lens (metamaterial enhanced)...\n")
+    print(">> Engaging resonant wireless field lens (metamaterial enhanced)...\n")
 
     # The "magic" part the user experiences
     result = mel.maintain_power(load_w=145, duration_s=45)
